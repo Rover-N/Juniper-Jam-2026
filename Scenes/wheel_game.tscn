@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bu83oeow0tibl"]
+
+[ext_resource type="Script" uid="uid://c3fbn5iod2bmg" path="res://Scripts/wheel_game.gd" id="1_ratk3"]
+[ext_resource type="PackedScene" uid="uid://b1wu0spdgmj88" path="res://Scenes/wheel.tscn" id="2_mmvpf"]
+[ext_resource type="PackedScene" uid="uid://8cs3evw18ax5" path="res://Scenes/arm.tscn" id="3_mmvpf"]
+
+[node name="WheelGame" type="Node2D" unique_id=20689074]
+script = ExtResource("1_ratk3")
+arm_speed = 1.7400000000000002
+big_spin_speed = -1.0
+
+[node name="BigSpin" type="Node2D" parent="." unique_id=258898249]
+position = Vector2(170, 170)
+
+[node name="Wheel" parent="BigSpin" unique_id=1345467007 instance=ExtResource("2_mmvpf")]
+
+[node name="Arm" parent="BigSpin" unique_id=9372712 node_paths=PackedStringArray("Wheel") instance=ExtResource("3_mmvpf")]
+Wheel = NodePath("../Wheel")
