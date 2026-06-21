@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://ysmqv6ga51jq"]
+
+[ext_resource type="Script" uid="uid://dueq0a02g22b2" path="res://Scripts/Combat Stuff/enemy_type.gd" id="1_b3t02"]
+
+[resource]
+script = ExtResource("1_b3t02")
+health_range = Vector2i(2, 5)
+attack_range = Vector2i(2, 2)
+speed_range = Vector2i(1, 1)
+metadata/_custom_type_script = "uid://dueq0a02g22b2"

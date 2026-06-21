@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://bdrqlm574ft4h" path="res://Scripts/Combat Stuff/combat.gd" id="1_7jmb3"]
 [ext_resource type="Resource" uid="uid://cr0l6f0reeqai" path="res://Resources/PlayerStats/basic_player.tres" id="2_4ln8h"]
 [ext_resource type="Resource" uid="uid://cqqnn3j5tscj" path="res://Resources/EnemyType/easy_enemy.tres" id="2_fe60u"]
+[ext_resource type="Resource" uid="uid://y4bmj3rfmku" path="res://Resources/EncounterTable/placeholder_encounter_table.tres" id="4_ubpar"]
 
 [node name="Combat" type="Node2D" unique_id=588568664]
 script = ExtResource("1_7jmb3")
 player_stats = ExtResource("2_4ln8h")
 enemy_type = ExtResource("2_fe60u")
+encounter_table = ExtResource("4_ubpar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1192865303]
 
@@ -19,7 +21,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HP" type="Label" parent="CanvasLayer/Control" unique_id=956862685]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="PlayerHP" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1556922556]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 568.0
+grow_vertical = 0
+max_value = 5.0
+step = 1.0
+value = 5.0
+allow_greater = true
+allow_lesser = true
+show_percentage = false
+
+[node name="EnemiesHP" type="ProgressBar" parent="CanvasLayer/Control" unique_id=260224925]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -568.0
+offset_bottom = 81.0
+grow_horizontal = 0
+max_value = 5.0
+step = 1.0
+value = 5.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 1
+show_percentage = false

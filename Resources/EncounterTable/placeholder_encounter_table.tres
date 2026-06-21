@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EncounterTable" format=3 uid="uid://y4bmj3rfmku"]
+
+[ext_resource type="Script" uid="uid://bd8fkglxr2tm4" path="res://Scripts/Combat Stuff/encounter_table.gd" id="1_nydss"]
+[ext_resource type="Script" uid="uid://dueq0a02g22b2" path="res://Scripts/Combat Stuff/enemy_type.gd" id="2_jkm7b"]
+[ext_resource type="Resource" uid="uid://cqqnn3j5tscj" path="res://Resources/EnemyType/easy_enemy.tres" id="3_jkm7b"]
+[ext_resource type="Resource" uid="uid://ysmqv6ga51jq" path="res://Resources/EnemyType/challenging_enemy.tres" id="4_lm2oh"]
+
+[resource]
+script = ExtResource("1_nydss")
+table = Dictionary[ExtResource("2_jkm7b"), int]({
+ExtResource("3_jkm7b"): 5,
+ExtResource("4_lm2oh"): 1
+})
+metadata/_custom_type_script = "uid://bd8fkglxr2tm4"

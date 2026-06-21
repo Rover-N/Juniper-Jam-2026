@@ -1,0 +1,5 @@
+Lead Programmer: Rover-N
+
+Font Used: Ochito by TJ Trewin
+
+Thanks stephane03 for a programming solution used for encounter tables.
