@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://b4mka78holgwq"]
+
+[ext_resource type="FontFile" uid="uid://ci4xyxgfgp527" path="res://Assets/Fonts/Ochito-8-pixel__tjtrewin-itch-io.ttf" id="1_6qf2j"]
+
+[resource]
+default_font = ExtResource("1_6qf2j")
+default_font_size = 32
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 16

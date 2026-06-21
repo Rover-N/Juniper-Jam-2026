@@ -2,6 +2,7 @@ class_name EnemyType
 extends Resource
 
 @export var enemy_name: String
+@export var animation_atlas: AtlasTexture
 @export var health_range: Vector2i
 @export var attack_range: Vector2i
 @export var speed_range: Vector2i

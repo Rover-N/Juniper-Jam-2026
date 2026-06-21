@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://ct76y536grepa"]
+
+[ext_resource type="Texture2D" uid="uid://dxssxtjc4xti0" path="res://Assets/Sprites/De.tres" id="1_a38kx"]
+[ext_resource type="Script" uid="uid://dueq0a02g22b2" path="res://Scripts/Combat Stuff/enemy_type.gd" id="1_kv0bo"]
+
+[resource]
+script = ExtResource("1_kv0bo")
+enemy_name = "De"
+animation_atlas = ExtResource("1_a38kx")
+health_range = Vector2i(5, 3)
+attack_range = Vector2i(1, 1)
+speed_range = Vector2i(1, 1)
+metadata/_custom_type_script = "uid://dueq0a02g22b2"

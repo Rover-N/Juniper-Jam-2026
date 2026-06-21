@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://fdwgsrh32v5w"]
+
+[ext_resource type="Texture2D" uid="uid://c6ormtpl86k6l" path="res://Assets/Sprites/Su.tres" id="1_4rtmf"]
+[ext_resource type="Script" uid="uid://dueq0a02g22b2" path="res://Scripts/Combat Stuff/enemy_type.gd" id="1_roism"]
+
+[resource]
+script = ExtResource("1_roism")
+enemy_name = "Su"
+animation_atlas = ExtResource("1_4rtmf")
+health_range = Vector2i(3, 1)
+attack_range = Vector2i(1, 1)
+speed_range = Vector2i(2, 2)
+metadata/_custom_type_script = "uid://dueq0a02g22b2"
