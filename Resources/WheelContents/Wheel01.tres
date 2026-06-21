@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WheelContents" format=3 uid="uid://bkya5fh7vtudh"]
+
+[ext_resource type="Script" uid="uid://ccpi4oq022uqy" path="res://Scripts/wheel_contents.gd" id="1_ys3rh"]
+
+[resource]
+script = ExtResource("1_ys3rh")
+radius = 93.0
+segments = Array[Color]([Color(0, 0, 0, 1), Color(1, 0, 0, 1)])
+width = 40.0
+metadata/_custom_type_script = "uid://ccpi4oq022uqy"

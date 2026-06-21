@@ -1,6 +1,8 @@
 @tool
 extends Node2D
 
+@export var data: WheelContents
+
 @export var radius: float = 20.0:
 	set(value):
 		radius = value
@@ -16,6 +18,14 @@ extends Node2D
 		width = value
 		queue_redraw()
 
+func _ready() -> void:
+	radius = data.radius
+	segments = data.segments
+	width = data.width
+	queue_redraw()
+	#self.position = Vector2(radius + width / 2 + 32, radius + width / 2 + 32)
+
+
 func _draw() -> void:
 	draw_circle(Vector2.ZERO, radius, Color.LIGHT_GRAY)
 	
@@ -28,7 +38,3 @@ func _draw() -> void:
 			20,
 			segments[i],
 			width) 
-
-func _ready() -> void:
-	pass
-	#self.position = Vector2(radius + width / 2 + 32, radius + width / 2 + 32)

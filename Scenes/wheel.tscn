@@ -4,6 +4,3 @@
 
 [node name="Wheel" type="Node2D" unique_id=1345467007]
 script = ExtResource("1_y7iat")
-radius = 100.0
-segments = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(0, 1, 0, 1), Color(1, 1, 0, 1)])
-width = 20.0
