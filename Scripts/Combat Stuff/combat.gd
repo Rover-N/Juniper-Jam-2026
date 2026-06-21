@@ -4,17 +4,17 @@ extends Node2D
 @export var enemy_type: EnemyType
 @export var encounter_table: EncounterTable
 var enemies: Array[Enemy]
+var RNG = RandomNumberGenerator.new()
 
 func add_enemy():
-	var n = 0
-	var table_winner: EnemyType
-	var threshold = randi_range(0, encounter_table.total_weight)
-	for encounter in encounter_table.table:
-		while threshold > n:
-			n += encounter_table.table[encounter]
-		table_winner = encounter
-	enemies.append(Enemy.new(table_winner))
+	# Thank you kilo_cant_concentrate on the Juniper's Dev Garden discord server :)
+	var index = RNG.rand_weighted(encounter_table.table.values())
+	enemies.append(Enemy.new(
+		encounter_table.table.keys()[index]
+	))
 
 func _ready() -> void:
-	add_enemy()
-	print(enemies[0].attack)
+	for i in range(1, 4):
+		add_enemy()
+	for enemy in enemies:
+		print(enemy.name)

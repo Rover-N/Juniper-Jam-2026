@@ -2,4 +2,4 @@ Lead Programmer: Rover-N
 
 Font Used: Ochito by TJ Trewin
 
-Thanks stephane03 for a programming solution used for encounter tables.
+Thank you stephane03, and kilo_cant_concentrate for programming help from Juniper Dev's Garden Discord as well as anybody who helped others during the jam.
