@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bu83oeow0tibl"]
 
-[ext_resource type="Script" uid="uid://c3fbn5iod2bmg" path="res://Scripts/wheel_game.gd" id="1_ratk3"]
+[ext_resource type="Script" uid="uid://c3fbn5iod2bmg" path="res://Scripts/Wheel Stuff/wheel_game.gd" id="1_ratk3"]
 [ext_resource type="PackedScene" uid="uid://b1wu0spdgmj88" path="res://Scenes/wheel.tscn" id="2_mmvpf"]
-[ext_resource type="Resource" uid="uid://bkya5fh7vtudh" path="res://Resources/WheelContents/Wheel01.tres" id="3_3f1cw"]
+[ext_resource type="Resource" uid="uid://bkya5fh7vtudh" path="res://Resources/WheelContents/wheel01.tres" id="3_3f1cw"]
 [ext_resource type="PackedScene" uid="uid://8cs3evw18ax5" path="res://Scenes/arm.tscn" id="3_mmvpf"]
 
 [node name="WheelGame" type="Node2D" unique_id=20689074]
