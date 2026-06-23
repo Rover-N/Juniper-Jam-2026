@@ -4,18 +4,19 @@
 [ext_resource type="Resource" uid="uid://cr0l6f0reeqai" path="res://Resources/PlayerStats/basic_player.tres" id="2_4ln8h"]
 [ext_resource type="Resource" uid="uid://dfxmah0rax5cc" path="res://Resources/EncounterTable/AtSuDe_encounter_table.tres" id="3_4ln8h"]
 [ext_resource type="Theme" uid="uid://b4mka78holgwq" path="res://Resources/Theme/theme.tres" id="4_avwh6"]
-[ext_resource type="Texture2D" uid="uid://d18gosx3g6qkk" path="res://Assets/Sprites/De.png" id="6_avwh6"]
-[ext_resource type="PackedScene" uid="uid://bu83oeow0tibl" path="res://Scenes/wheel_game.tscn" id="7_3w34b"]
+[ext_resource type="Script" uid="uid://dueq0a02g22b2" path="res://Scripts/Combat Stuff/enemy_type.gd" id="4_ut0kg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5882"]
-atlas = ExtResource("6_avwh6")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_8m8ww"]
+script = ExtResource("4_ut0kg")
+metadata/_custom_type_script = "uid://dueq0a02g22b2"
 
-[node name="Combat" type="Node2D" unique_id=588568664 node_paths=PackedStringArray("enemy_label", "enemies_hp")]
+[node name="Combat" type="Node2D" unique_id=588568664 node_paths=PackedStringArray("player_label", "enemy_label", "enemies_hp")]
 script = ExtResource("1_7jmb3")
 player_stats = ExtResource("2_4ln8h")
+player_label = NodePath("CanvasLayer/Control/PlayerHP/PlayerLabel")
 encounter_table = ExtResource("3_4ln8h")
-enemy_sprite_container = NodePath("CanvasLayer/Control/HBoxContainer")
+enemy_type = SubResource("Resource_8m8ww")
+enemy_sprite_container = NodePath("CanvasLayer/Control/EnemyContainer")
 enemy_label = NodePath("CanvasLayer/Control/EnemiesHP/EnemyLabel")
 enemies_hp = NodePath("CanvasLayer/Control/EnemiesHP")
 
@@ -44,6 +45,21 @@ value = 5.0
 allow_greater = true
 allow_lesser = true
 show_percentage = false
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/Control/PlayerHP" unique_id=750838309]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -16.0
+offset_right = 66.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You 15/15"
 
 [node name="EnemiesHP" type="ProgressBar" parent="CanvasLayer/Control" unique_id=260224925]
 layout_mode = 1
@@ -76,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Enemies 15/15"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1848549194]
+[node name="EnemyContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1848549194]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -88,13 +104,3 @@ offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=1600520950]
-visible = false
-layout_mode = 2
-texture = SubResource("AtlasTexture_j5882")
-expand_mode = 2
-flip_h = true
-
-[node name="WheelGame" parent="." unique_id=20689074 instance=ExtResource("7_3w34b")]
-position = Vector2(-1, 257)

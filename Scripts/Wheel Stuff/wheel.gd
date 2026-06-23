@@ -1,34 +1,29 @@
-@tool
+class_name Wheel
 extends Node2D
 
-@export var data: WheelContents
+@export var wheel_spin: float
 
-@export var radius: float = 20.0:
-	set(value):
-		radius = value
-		queue_redraw()
+@export var arm_spin: float
 
-@export var segments: Array[Color]:
-	set(value):
-		segments = value
-		queue_redraw()
+@export var radius: float
 
-@export var width: float = 5:
-	set(value):
-		width = value
-		queue_redraw()
+@export var segments: Array[Color]
+
+@export var width: float
+
+const arm_scene = preload("res://Scenes/arm.tscn")
+
+var arm: Node2D
+
+var arm_script: Variant	= "res://Scripts/Wheel Stuff/arm.gd"
 
 func _ready() -> void:
-	radius = data.radius
-	segments = data.segments
-	width = data.width
-	queue_redraw()
-	#self.position = Vector2(radius + width / 2 + 32, radius + width / 2 + 32)
-
+	arm = arm_scene.instantiate()
+	arm.wheel_width = width
+	arm.wheel_radius = radius
+	self.add_child(arm)
 
 func _draw() -> void:
-	draw_circle(Vector2.ZERO, radius, Color.LIGHT_GRAY)
-	
 	for i in range(segments.size()):
 		draw_arc(
 			Vector2.ZERO,
@@ -37,4 +32,8 @@ func _draw() -> void:
 			deg_to_rad(360.0 / segments.size() * (i + 1)),
 			20,
 			segments[i],
-			width) 
+			width)
+
+func _process(delta: float) -> void:
+	rotate(delta * wheel_spin)
+	self.get_child(0).rotate(delta * (arm_spin - wheel_spin))
